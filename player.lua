@@ -16,17 +16,6 @@ Player = {
 }
 
 function Player.Load()
-	playerR = {}
-	playerR[1] = love.graphics.newImage('pictures/players/WarRight.png')
-	playerR[2] = love.graphics.newImage('pictures/players/WarRight2.png')
-	playerR[3] = love.graphics.newImage('pictures/players/WarRight.png')
-	playerR[4] = love.graphics.newImage('pictures/players/WarRight3.png')
-
-	playerU = {}
-	playerU[1] = love.graphics.newImage('pictures/players/WarUp.png')
-	playerU[2] = love.graphics.newImage('pictures/players/WarUp2.png')
-	playerU[3] = love.graphics.newImage('pictures/players/WarUp.png')
-	playerU[4] = love.graphics.newImage('pictures/players/WarUp3.png')
 
 	playerD = {}
 	playerD[1] = love.graphics.newImage('pictures/players/WarDown.png')
@@ -58,6 +47,46 @@ function Player.Load()
 	playerL[7] = love.graphics.newImage('pictures/players/WarLeft7.png')
 	playerL[8] = love.graphics.newImage('pictures/players/WarLeft8.png')
 	
+	playerUL = {}
+	playerUL[1] = love.graphics.newImage('pictures/players/WarUpLeft.png')
+	playerUL[2] = love.graphics.newImage('pictures/players/WarUpLeft2.png')
+	playerUL[3] = love.graphics.newImage('pictures/players/WarUpLeft3.png')
+	playerUL[4] = love.graphics.newImage('pictures/players/WarUpLeft4.png')
+	playerUL[5] = love.graphics.newImage('pictures/players/WarUpLeft5.png')
+	playerUL[6] = love.graphics.newImage('pictures/players/WarUpLeft6.png')
+	playerUL[7] = love.graphics.newImage('pictures/players/WarUpLeft7.png')
+	playerUL[8] = love.graphics.newImage('pictures/players/WarUpLeft8.png')
+	
+	playerU = {}
+	playerU[1] = love.graphics.newImage('pictures/players/WarUp.png')
+	playerU[2] = love.graphics.newImage('pictures/players/WarUp2.png')
+	playerU[3] = love.graphics.newImage('pictures/players/WarUp3.png')
+	playerU[4] = love.graphics.newImage('pictures/players/WarUp4.png')
+	playerU[5] = love.graphics.newImage('pictures/players/WarUp5.png')
+	playerU[6] = love.graphics.newImage('pictures/players/WarUp6.png')
+	playerU[7] = love.graphics.newImage('pictures/players/WarUp7.png')
+	playerU[8] = love.graphics.newImage('pictures/players/WarUp8.png')
+	
+	playerUR = {}
+	playerUR[1] = love.graphics.newImage('pictures/players/WarUpRight.png')
+	playerUR[2] = love.graphics.newImage('pictures/players/WarUpRight2.png')
+	playerUR[3] = love.graphics.newImage('pictures/players/WarUpRight3.png')
+	playerUR[4] = love.graphics.newImage('pictures/players/WarUpRight4.png')
+	playerUR[5] = love.graphics.newImage('pictures/players/WarUpRight5.png')
+	playerUR[6] = love.graphics.newImage('pictures/players/WarUpRight6.png')
+	playerUR[7] = love.graphics.newImage('pictures/players/WarUpRight7.png')
+	playerUR[8] = love.graphics.newImage('pictures/players/WarUpRight8.png')
+	
+	playerR = {}
+	playerR[1] = love.graphics.newImage('pictures/players/WarRight.png')
+	playerR[2] = love.graphics.newImage('pictures/players/WarRight2.png')
+	playerR[3] = love.graphics.newImage('pictures/players/WarRight3.png')
+	playerR[4] = love.graphics.newImage('pictures/players/WarRight4.png')
+	playerR[5] = love.graphics.newImage('pictures/players/WarRight5.png')
+	playerR[6] = love.graphics.newImage('pictures/players/WarRight6.png')
+	playerR[7] = love.graphics.newImage('pictures/players/WarRight7.png')
+	playerR[8] = love.graphics.newImage('pictures/players/WarRight8.png')
+	
 	playerDR = {}
 	playerDR[1] = love.graphics.newImage('pictures/players/WarDownRight.png')
 	playerDR[2] = love.graphics.newImage('pictures/players/WarDownRight2.png')
@@ -86,20 +115,44 @@ function Player.Update(dt)
 		camera.y = Player.Position.y - love.graphics.getHeight() / 2
 	end
 
-	if love.keyboard.isDown('w') then
-		Player.Position.y = Player.Position.y - Player.Vitesse * dt
-		Player.Pic = playerU[Player.pNum]
-		Player.AnimTimer = Player.AnimTimer + dt
-		if Player.AnimTimer > 0.1 then
-			Player.pNum = Player.pNum + 1
-			Player.AnimTimer = 0
+	if love.keyboard.isDown('w') or love.keyboard.isDown('z') then
+		if love.keyboard.isDown('d') then
+			Player.Position.y = Player.Position.y - Player.Vitesse * dt
+			Player.Position.x = Player.Position.x + Player.Vitesse * dt
+			Player.Pic = playerUR[Player.pNum]
+			Player.AnimTimer = Player.AnimTimer + dt
+			if Player.AnimTimer > 0.1 then
+				Player.pNum = Player.pNum + 1
+				Player.AnimTimer = 0
+			end
+		elseif love.keyboard.isDown('s') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') then
+			Player.Position.y = Player.Position.y - Player.Vitesse * dt
+			Player.Position.x = Player.Position.x - Player.Vitesse * dt
+			Player.Pic = playerUL[Player.pNum]
+			Player.AnimTimer = Player.AnimTimer + dt
+			if Player.AnimTimer > 0.1 then
+				Player.pNum = Player.pNum + 1
+				Player.AnimTimer = 0
+			end
+		else
+			Player.Position.y = Player.Position.y - Player.Vitesse * dt
+			Player.Pic = playerU[Player.pNum]
+			Player.AnimTimer = Player.AnimTimer + dt
+			if Player.AnimTimer > 0.1 then
+				Player.pNum = Player.pNum + 1
+				Player.AnimTimer = 0
+			end
 		end
-		if Player.pNum > 4 then
+			
+		if Player.pNum > 8 then
 			Player.pNum = 1
 		end
 	end
 	
-	if love.keyboard.isDown('a') then
+	if love.keyboard.isDown('a') or love.keyboard.isDown('q') then
 		if love.keyboard.isDown('s') then
 			Player.Position.y = Player.Position.y + Player.Vitesse * dt
 			Player.Position.x = Player.Position.x - Player.Vitesse * dt
@@ -109,7 +162,10 @@ function Player.Update(dt)
 				Player.pNum = Player.pNum + 1
 				Player.AnimTimer = 0
 			end
-		elseif love.keyboard.isDown('w') then
+		elseif love.keyboard.isDown('d') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') then
 			Player.Position.y = Player.Position.y - Player.Vitesse * dt
 			Player.Position.x = Player.Position.x - Player.Vitesse * dt
 			Player.Pic = playerUL[Player.pNum]
@@ -134,7 +190,7 @@ function Player.Update(dt)
 	end
 	
 	if love.keyboard.isDown('s') then
-		if love.keyboard.isDown('a') then
+		if love.keyboard.isDown('a') or love.keyboard.isDown('q') then
 			Player.Position.y = Player.Position.y + Player.Vitesse * dt
 			Player.Position.x = Player.Position.x - Player.Vitesse * dt
 			Player.Pic = playerDL[Player.pNum]
@@ -143,6 +199,9 @@ function Player.Update(dt)
 				Player.pNum = Player.pNum + 1
 				Player.AnimTimer = 0
 			end
+		elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
 		elseif love.keyboard.isDown('d') then
 			Player.Position.y = Player.Position.y + Player.Vitesse * dt
 			Player.Position.x = Player.Position.x + Player.Vitesse * dt
@@ -168,16 +227,46 @@ function Player.Update(dt)
 	end
 	
 	if love.keyboard.isDown('d') then
-		Player.Position.x = Player.Position.x + Player.Vitesse * dt
-		Player.Pic = playerR[Player.pNum]
-		Player.AnimTimer = Player.AnimTimer + dt
-		if Player.AnimTimer > 0.1 then
-			Player.pNum = Player.pNum + 1
-			Player.AnimTimer = 0
+		if love.keyboard.isDown('s') then
+			Player.Position.x = Player.Position.x + Player.Vitesse * dt
+			Player.Position.y = Player.Position.y + Player.Vitesse * dt
+			Player.Pic = playerDR[Player.pNum]
+			Player.AnimTimer = Player.AnimTimer + dt
+			if Player.AnimTimer > 0.1 then
+				Player.pNum = Player.pNum + 1
+				Player.AnimTimer = 0
+			end
+		elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') then
+			Player.Position.x = Player.Position.x + Player.Vitesse * dt
+			Player.Position.y = Player.Position.y - Player.Vitesse * dt
+			Player.Pic = playerUR[Player.pNum]
+			Player.AnimTimer = Player.AnimTimer + dt
+			if Player.AnimTimer > 0.1 then
+				Player.pNum = Player.pNum + 1
+				Player.AnimTimer = 0
+			end
+		else
+			Player.Position.x = Player.Position.x + Player.Vitesse * dt
+			Player.Pic = playerR[Player.pNum]
+			Player.AnimTimer = Player.AnimTimer + dt
+			if Player.AnimTimer > 0.1 then
+				Player.pNum = Player.pNum + 1
+				Player.AnimTimer = 0
+			end
 		end
-		if Player.pNum > 4 then
+		
+		if Player.pNum > 8 then
 			Player.pNum = 1
 		end
+	end
+end
+
+function love.keypressed(key)
+	if key == 'escape' then
+		love.event.push("quit")
 	end
 end
 
