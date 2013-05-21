@@ -2,14 +2,14 @@
 function SortieEcran()
 	if Player.Position.x < 0 then
 		Player.Position.x = 0
-	elseif Player.Position.x > Ground:getWidth() - 20 then
-		Player.Position.x = Ground:getWidth() - 20
+	elseif Player.Position.x > Ground:getWidth() - Player.Pic:getWidth() + 2 then
+	   Player.Position.x = Ground:getWidth() - Player.Pic:getWidth() + 2
 	end
 	if Player.Position.y < 0 then
-		Player.Position.y = 0
-	elseif Player.Position.y > Ground:getHeight() - 43 then
-		Player.Position.y = Ground:getHeight() -  43
-	end
+	   Player.Position.y = 0
+	elseif Player.Position.y > Ground:getHeight() - Player.Pic:getHeight() + 3 then
+	   Player.Position.y = Ground:getHeight() -  Player.Pic:getHeight() + 3
+	end 
 end
 
 Cercle = {

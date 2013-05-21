@@ -115,6 +115,14 @@ function Player.Update(dt)
       camera.y = Player.Position.y - love.graphics.getHeight() / 2
    end
 
+   if camera.x > (Ground:getWidth() - love.graphics.getWidth()) then
+      camera.x = Ground:getWidth() - love.graphics.getWidth()
+   end
+
+   if camera.y > (Ground:getHeight() - love.graphics.getHeight()) then
+      camera.y = Ground:getHeight() - love.graphics.getHeight()
+   end
+
    if love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up') then
       if love.keyboard.isDown('d') or love.keyboard.isDown('right') then
 	 Player.Position.y = Player.Position.y + math.sin(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
