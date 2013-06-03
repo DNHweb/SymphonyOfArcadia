@@ -4,7 +4,8 @@ EtatJeu = "Menu"
 function ButtonLoad()
 	Button = {
 		Main = {
-			New = {On = NewOn, Off = NewOff, x = love.graphics.getWidth()/2 - NewOn:getWidth()/2, y = love.graphics.getHeight() - 100, Width = 185, Height = 26, Id = "NewGame"}
+			New = {On = NewOn, Off = NewOff, x = love.graphics.getWidth()/2 - NewOn:getWidth()/2, y = love.graphics.getHeight() - 200, Width = 224, Height = 35, Id = "NewGame"},
+			Quit = {On = QuitOn, Off = QuitOff, x = love.graphics.getWidth()/2 - QuitOn:getWidth()/2, y = love.graphics.getHeight() - 100, Width = 106, Height = 35, Id = "Quit"}
 		}
 	}
 end
@@ -37,6 +38,8 @@ function love.mousepressed(x, y, button)
 				if x > v.x and x < v.x + v.Width and y > v.y and  y < v.y + v.Height then
 					if v.Id == "NewGame" then
 						EtatJeu = "Play"
+					elseif v.Id == "Quit" then
+						love.event.push("quit")
 					end
 				end
 			end

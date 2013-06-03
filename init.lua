@@ -42,6 +42,8 @@ function PicturesLoad()
 	
 	NewOn = love.graphics.newImage('pictures/menus/NewOn.png')
 	NewOff = love.graphics.newImage('pictures/menus/NewOff.png')
+	QuitOn = love.graphics.newImage('pictures/menus/QuitOn.png')
+	QuitOff = love.graphics.newImage('pictures/menus/QuitOff.png')
 end
 
 -- +------------------------+
