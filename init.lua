@@ -1,10 +1,16 @@
 
+-- +----------------------------+
+-- | Initialition des variables |
+-- +----------------------------+
 Reso = {
 	Width,
 	Height,
 	Scale
 }
 
+-- +-------------------------------+
+-- | Initialition de la résolution |
+-- +-------------------------------+
 function Resolution()
 	-- Met l'écran dans la résolution optimale --
 	Modes = love.graphics.getModes()
@@ -20,9 +26,31 @@ function Resolution()
 	Reso.Scale = Diagonale / Default
 end
 
-function PicturesLoad()
-	Ground = love.graphics.newImage('pictures/Ground.png')
+-- +--------------------------+
+-- | Initialition des polices |
+-- +--------------------------+
+function FontLoad()
+
 end
+
+-- +-------------------------+
+-- | Initialition des images |
+-- +-------------------------+
+function PicturesLoad()
+	MainTitle = love.graphics.newImage('pictures/SoA.png')
+	Ground = love.graphics.newImage('pictures/Ground.png')
+	
+	NewOn = love.graphics.newImage('pictures/menus/NewOn.png')
+	NewOff = love.graphics.newImage('pictures/menus/NewOff.png')
+end
+
+-- +------------------------+
+-- | Initialition des menus |
+-- +------------------------+
+function MenuLoad()
+	
+end
+
 
 function GroundDraw()
 	love.graphics.draw(Ground, 0, 0, 0, Reso.Scale, Reso.Scale)

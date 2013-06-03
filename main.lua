@@ -3,17 +3,22 @@ require "init"
 require "camera"
 require "collision"
 require "player"
+require "menu"
 
 function love.load()
 	Resolution()
 	PicturesLoad()
+	ButtonLoad()
 	Player.Load()
 end
 
 function love.draw()
 	camera:set()
-	GroundDraw()
-	Player.Draw()
+	MenuDraw()
+	if EtatJeu == "Play" then
+		GroundDraw()
+		Player.Draw()
+	end
 	camera:unset()
 end
 

@@ -124,79 +124,79 @@ function Player.Update(dt)
    end
 
    if love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up') then
-      if love.keyboard.isDown('d') or love.keyboard.isDown('right') then
-	 Player.Position.y = Player.Position.y + math.sin(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.x = Player.Position.x + math.cos(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerUR[Player.pNum]
-      elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
-	 Player.Position.y = Player.Position.y
-	 Player.Position.x = Player.Position.x
-      elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
-	 Player.Position.y = Player.Position.y + math.sin(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.x = Player.Position.x + math.cos(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerUL[Player.pNum]
-      else
-	 Player.Position.y = Player.Position.y + math.sin(3 * math.pi / 2) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerU[Player.pNum]
-      end
-   elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
-      if love.keyboard.isDown('s') or love.keyboard.isDown('down') then
-	 Player.Position.y = Player.Position.y + math.sin(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.x = Player.Position.x + math.cos(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerDL[Player.pNum]
-      elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
-	 Player.Position.y = Player.Position.y
-	 Player.Position.x = Player.Position.x
-      elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up') then
-	 Player.Position.y = Player.Position.y + math.sin(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.x = Player.Position.x + math.cos(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerUL[Player.pNum]
-      else
-	 Player.Position.x = Player.Position.x + math.cos(math.pi) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerL[Player.pNum]
-      end
-   elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
-      if love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
-	 Player.Position.y = Player.Position.y + math.sin(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.x = Player.Position.x + math.cos(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerDL[Player.pNum]
-      elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up') then
-	 Player.Position.y = Player.Position.y
-	 Player.Position.x = Player.Position.x
-      elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
-	 Player.Position.y = Player.Position.y + math.sin(math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.x = Player.Position.x + math.cos(math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerDR[Player.pNum]
-      else
-	 Player.Position.y = Player.Position.y + math.sin(math.pi / 2) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerD[Player.pNum]
-      end
-   elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
-      if love.keyboard.isDown('s') or love.keyboard.isDown('down') then
-	 Player.Position.x = Player.Position.x + math.cos(math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.y = Player.Position.y + math.sin(math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerDR[Player.pNum]
-      elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
-	 Player.Position.y = Player.Position.y
-	 Player.Position.x = Player.Position.x
-      elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up')then
-	 Player.Position.x = Player.Position.x + math.cos(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Position.y = Player.Position.y + math.sin(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerUR[Player.pNum]
-      else
-	 Player.Position.x = Player.Position.x + math.cos(0) * Player.Vitesse * dt / 0.002 
-	 Player.Pic = playerR[Player.pNum]
-      end
-   end
-   Player.AnimTimer = Player.AnimTimer + dt
-   if Player.AnimTimer > 0.1 then
-      Player.pNum = Player.pNum + 1
-      Player.AnimTimer = 0
-   end
+		if love.keyboard.isDown('d') or love.keyboard.isDown('right') then
+			Player.Position.y = Player.Position.y + math.sin(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.x = Player.Position.x + math.cos(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerUR[Player.pNum]
+		elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
+			Player.Position.y = Player.Position.y + math.sin(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.x = Player.Position.x + math.cos(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerUL[Player.pNum]
+		else
+			Player.Position.y = Player.Position.y + math.sin(3 * math.pi / 2) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerU[Player.pNum]
+		end
+	elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
+		if love.keyboard.isDown('s') or love.keyboard.isDown('down') then
+			Player.Position.y = Player.Position.y + math.sin(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.x = Player.Position.x + math.cos(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerDL[Player.pNum]
+		elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up') then
+			Player.Position.y = Player.Position.y + math.sin(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.x = Player.Position.x + math.cos(5 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerUL[Player.pNum]
+		else
+			Player.Position.x = Player.Position.x + math.cos(math.pi) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerL[Player.pNum]
+		end
+	elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
+		if love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
+			Player.Position.y = Player.Position.y + math.sin(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.x = Player.Position.x + math.cos(3 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerDL[Player.pNum]
+		elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
+			Player.Position.y = Player.Position.y + math.sin(math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.x = Player.Position.x + math.cos(math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerDR[Player.pNum]
+		else
+			Player.Position.y = Player.Position.y + math.sin(math.pi / 2) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerD[Player.pNum]
+		end
+	elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
+		if love.keyboard.isDown('s') or love.keyboard.isDown('down') then
+			Player.Position.x = Player.Position.x + math.cos(math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.y = Player.Position.y + math.sin(math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerDR[Player.pNum]
+		elseif love.keyboard.isDown('a') or love.keyboard.isDown('q') or love.keyboard.isDown('left') then
+			Player.Position.y = Player.Position.y
+			Player.Position.x = Player.Position.x
+		elseif love.keyboard.isDown('w') or love.keyboard.isDown('z') or love.keyboard.isDown('up')then
+			Player.Position.x = Player.Position.x + math.cos(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Position.y = Player.Position.y + math.sin(7 * math.pi / 4) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerUR[Player.pNum]
+		else
+			Player.Position.x = Player.Position.x + math.cos(0) * Player.Vitesse * dt / 0.002 
+			Player.Pic = playerR[Player.pNum]
+		end
+	end
+	Player.AnimTimer = Player.AnimTimer + dt
+	if Player.AnimTimer > 0.1 then
+		Player.pNum = Player.pNum + 1
+		Player.AnimTimer = 0
+	end
    
-   if Player.pNum > 8 then
-      Player.pNum = 1
-   end
+	if Player.pNum > 8 then
+		Player.pNum = 1
+	end
 end
 
 function love.keypressed(key)
@@ -206,12 +206,12 @@ function love.keypressed(key)
 end
 
 function Player.AnimReset(key)
-   if key == 'z' then
+   if key == 'z' or key == 'w' then
       Player.AnimTimer = 0
       Player.pNum = 1
       Player.Pic = playerU[1]
    end
-   if key == 'q' then
+   if key == 'q' or key == 'a' then
       Player.AnimTimer = 0
       Player.pNum = 1
       Player.Pic = playerL[1]
