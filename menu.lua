@@ -5,7 +5,8 @@ function ButtonLoad()
 	Button = {
 		Main = {
 			New = {On = NewOn, Off = NewOff, x = love.graphics.getWidth()/2 - NewOn:getWidth()/2, y = love.graphics.getHeight() - 200, Width = 224, Height = 35, Id = "NewGame"},
-			Quit = {On = QuitOn, Off = QuitOff, x = love.graphics.getWidth()/2 - QuitOn:getWidth()/2, y = love.graphics.getHeight() - 100, Width = 106, Height = 35, Id = "Quit"}
+			Load = {On = LoadOn, Off = LoadOff, x = love.graphics.getWidth()/2 - LoadOn:getWidth()/2, y = love.graphics.getHeight() - 150, Width = 224, Height = 35, Id = "LoadGame"},
+			Quit = {On = QuitOn, Off = QuitOff, x = love.graphics.getWidth()/2 - QuitOn:getWidth()/2, y = love.graphics.getHeight() - 100, Width = 106, Height = 35, Id = "QuitGame"}
 		}
 	}
 end
@@ -22,8 +23,15 @@ end
 
 function MenuDraw()
 
+	-- love.audio.play(MainTheme) fait planter le jeu... WTF ?!
 	if EtatJeu == "Menu" then
 		love.graphics.draw(MainTitle, 0, 0, 0, Reso.Scale, Reso.Scale)
+		love.graphics.setColor(51, 59, 81, 150)
+		love.graphics.rectangle("fill", love.graphics.getWidth()/2 - 150, love.graphics.getHeight() - 220, 300, 180)
+		love.graphics.reset()
+		love.graphics.setColor(255, 255, 255, 255)
+		love.graphics.rectangle("line", love.graphics.getWidth()/2 - 150, love.graphics.getHeight() - 220, 300, 180)
+		love.graphics.reset()
 		for k, v in pairs(Button.Main) do
 			ButtonDraw( v.Off, v.On, v.x, v.y, v.Width, v.Height, x, y )
 		end
@@ -38,7 +46,9 @@ function love.mousepressed(x, y, button)
 				if x > v.x and x < v.x + v.Width and y > v.y and  y < v.y + v.Height then
 					if v.Id == "NewGame" then
 						EtatJeu = "Play"
-					elseif v.Id == "Quit" then
+					elseif v.Id == "LoadGame" then
+						
+					elseif v.Id == "QuitGame" then
 						love.event.push("quit")
 					end
 				end

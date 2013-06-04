@@ -7,6 +7,7 @@ require "menu"
 
 function love.load()
 	Resolution()
+	SoundLoad()
 	PicturesLoad()
 	ButtonLoad()
 	Player.Load()

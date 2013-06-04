@@ -26,24 +26,30 @@ function Resolution()
 	Reso.Scale = Diagonale / Default
 end
 
--- +--------------------------+
--- | Initialition des polices |
--- +--------------------------+
-function FontLoad()
-
+-- +-----------------------+
+-- | Initialition des sons |
+-- +-----------------------+
+function SoundLoad()
+	MainTheme = love.audio.newSource("sounds/MainTheme.mp3", "stream")
+	MainTheme:setVolume(0.25)
+	MainTheme:rewind()
 end
 
 -- +-------------------------+
 -- | Initialition des images |
 -- +-------------------------+
 function PicturesLoad()
+	-- Element du menu principal --
 	MainTitle = love.graphics.newImage('pictures/SoA.png')
-	Ground = love.graphics.newImage('pictures/Ground.png')
-	
 	NewOn = love.graphics.newImage('pictures/menus/NewOn.png')
 	NewOff = love.graphics.newImage('pictures/menus/NewOff.png')
+	LoadOn = love.graphics.newImage('pictures/menus/LoadOn.png')
+	LoadOff = love.graphics.newImage('pictures/menus/LoadOff.png')
 	QuitOn = love.graphics.newImage('pictures/menus/QuitOn.png')
 	QuitOff = love.graphics.newImage('pictures/menus/QuitOff.png')
+	
+	-- Element de decor --
+	Ground = love.graphics.newImage('pictures/Ground.png')
 end
 
 -- +------------------------+

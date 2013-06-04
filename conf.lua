@@ -1,7 +1,7 @@
 
 function love.conf(t)
-	t.title = "New Project"			-- The title of the window the game is in (string)
-	t.author = "SexyTeam"			-- The author of the game (string)
+	t.title = "Symphony of Arcadia"	-- The title of the window the game is in (string)
+	t.author = "RikiCorp"			-- The author of the game (string)
 	t.url = ""						-- The website of the game (string)
 	t.identity = nil				-- The name of the save directory (string)
 	t.version = "0.8.0"				-- The LÖVE version this game was made for (string)
