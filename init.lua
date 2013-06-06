@@ -47,6 +47,10 @@ function PicturesLoad()
 	LoadOff = love.graphics.newImage('pictures/menus/LoadOff.png')
 	QuitOn = love.graphics.newImage('pictures/menus/QuitOn.png')
 	QuitOff = love.graphics.newImage('pictures/menus/QuitOff.png')
+	SaveOn = love.graphics.newImage('pictures/menus/EmptySaveOn.png')
+	SaveOff = love.graphics.newImage('pictures/menus/EmptySaveOff.png')
+	ReturnOn = love.graphics.newImage('pictures/menus/ReturnOn.png')
+	ReturnOff = love.graphics.newImage('pictures/menus/ReturnOff.png')
 	
 	-- Element de decor --
 	Ground = love.graphics.newImage('pictures/Ground.png')
