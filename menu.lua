@@ -54,6 +54,15 @@ function MenuDraw()
 			ButtonDraw( v.Off, v.On, v.x, v.y, v.Width, v.Height, x, y )
 		end
 	end
+	if EtatJeu == "Create" then
+		love.graphics.draw(MainTitle, 0, 0, 0, Reso.Scale, Reso.Scale)
+		love.graphics.setColor(51, 59, 81, 150)
+		love.graphics.rectangle("fill", 50, 50, love.graphics.getWidth() - 100, love.graphics.getHeight() - 100)
+		love.graphics.reset()
+		love.graphics.setColor(255, 255, 255, 255)
+		love.graphics.rectangle("line", 50, 50, love.graphics.getWidth() - 100, love.graphics.getHeight() - 100)
+		love.graphics.reset()
+	end
 end
 
 function love.mousepressed(x, y, button)

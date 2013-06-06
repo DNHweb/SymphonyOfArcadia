@@ -56,11 +56,11 @@ function PicturesLoad()
 	Ground = love.graphics.newImage('pictures/Ground.png')
 end
 
--- +------------------------+
--- | Initialition des menus |
--- +------------------------+
-function MenuLoad()
-	
+-- +--------------------------+
+-- | Initialition des polices |
+-- +--------------------------+
+function FontLoad()
+	MainFont = love.graphics.newFont("fonts/PerryGothic.ttf", 25)
 end
 
 
