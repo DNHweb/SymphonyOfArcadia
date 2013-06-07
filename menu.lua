@@ -80,6 +80,8 @@ function love.mousepressed(x, y, button)
 					end
 				end
 			end
+		end
+		if EtatJeu == "Save" then
 			for k, v in pairs(Button.NewGame) do
 				if x > v.x and x < v.x + v.Width and y > v.y and  y < v.y + v.Height then
 					if v.Id == "Save1" then
